@@ -1,3 +1,11 @@
+import { Col, Container, Row } from 'react-bootstrap';
+
 export default function Home() {
-  return <h1>Welcome</h1>;
+  return (
+    <Container>
+      <Row>
+        <Col as={'h1'}>Welcome Home !</Col>
+      </Row>
+    </Container>
+  );
 }
