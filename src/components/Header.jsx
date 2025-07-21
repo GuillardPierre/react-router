@@ -1,12 +1,18 @@
 import { Container, Navbar, Nav } from 'react-bootstrap';
-import { NavLink } from 'react-router';
+import { NavLink, useMatch, useParams } from 'react-router';
 import '../styles/header.scss';
 
 export default function Header() {
+  const match = useMatch('/categorie/:category');
+  const { category } = useParams();
+
   return (
     <header>
       <Navbar expand='lg' className='bg-body-tertiary '>
         <Container>
+          {match && (
+            <Navbar.Brand href='#home'>Catégorie: {category}</Navbar.Brand>
+          )}
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='ms-auto'>
